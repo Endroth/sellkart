@@ -251,7 +251,7 @@ public class SellPlugin extends JavaPlugin implements Listener {
         if (e.getRawSlot() == BUTTON) {
             e.setCancelled(true);
             sell(p, top);
-            Bukkit.getScheduler().runTask(this, p::closeInventory);
+            Bukkit.getScheduler().runTask(this, () -> p.closeInventory());
             return;
         }
 
